@@ -3,7 +3,7 @@ def current_ranges(range_list):
       list1 = []
       while len(range_list)>1:
           seq_list,range_list = get_range_sequence(range_list)
-          add_to_list(seq_list,list_tuple)
+          add_to_list(seq_list,list1)
       if list1:    
           get_output(list1)
           return 'Valid Input'
@@ -30,17 +30,17 @@ def get_list(range_list,sequence,count):
         newRangeList = range_list[count:]    
     return sequence,newRangeList           
                     
-def add_to_list(sequence_list,list_tuple):
+def add_to_list(sequence_list,list_t):
     if len(sequence_list) > 1:              
-        return(list_tuple.append(sequence_list))
+        return(list_t.append(sequence_list))
     else:
         return False
   
 def validate_input(ranges):
     return (len(ranges)>0)
 
-def get_output(list_tuple):
-    for lst in list_tuple:
+def get_output(list_t):
+    for lst in list_t:
         reading = len(lst)
         ranges = str(lst[0]) + '-' + str(lst[len(lst) - 1])
         output = str(ranges) + ',' + str(reading)
